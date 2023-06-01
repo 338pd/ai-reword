@@ -1,0 +1,88 @@
+:root {
+  --black: #0f0f0f;
+  --black-alt: #131313;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.25rem;
+  font-family: Arial;
+  color: slategrey;
+  border-bottom: 1px solid slategrey;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  font-family: Arial;
+  color: slategrey;
+  margin-top: -1rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  font-family: Arial;
+  color: slategrey;
+}
+
+.button-label {
+  font-size: 1rem;
+  font-family: Arial;
+  color: slategrey;
+  font-size: 1rem;
+  font-family: Arial;
+  color: slategrey;
+}
+
+.input-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.button-container {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  margin: .5rem;
+  margin-bottom: 1rem;
+  border: 1px solid slategrey;
+  border-radius: 10px;
+  border-color: slategrey;
+}
+
+.reader-button {
+  font-size: 1rem;
+  padding: .5rem;
+  cursor: pointer;
+  background-color: black;
+  color: slategrey;
+  user-select: none;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.reader-button:hover {
+  border-color: slategray;
+  background-color: slategray;
+  color: var(--black);
+}
+
+#version {
+  display: flex;
+  flex-direction: column;
+  align-items: bottom;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
