@@ -85,10 +85,14 @@ p {
   border-radius: 10px;
 }
 
+.highlight:hover {
+  color: rgb(127, 145, 163)
+}
+
 .reader-button:hover {
-  border-color: slategray;
-  background-color: slategray;
-  color: var(--black);
+  border-color: var(--black-alt);
+  background-color: var(--black-alt);
+  color: slategray ;
 }
 
 .highlight {
@@ -104,6 +108,8 @@ p {
   background-color: slategray;
   color: var(--black);
 }
+
+
 
 .submit-button {
   font-size: 1rem;

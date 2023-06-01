@@ -53,7 +53,7 @@
                 <button id='sizing-expanded' class="reader-button">Expanded</button>
             </div>
             <label class='button-label'>Input:</label>
-            <textarea id="input" class='text-container' placeholder="Enter text"></textarea>
+            <textarea id="input" class='text-container'></textarea>
 
             <button id='submit-button' class="submit-button">Get Result</button>
 
@@ -61,7 +61,7 @@
             <textarea id="output" class='text-container' readonly></textarea>
 
             <div class='version-container'>
-                <p id='version'>V0.0.1</p>
+                <p id='version'>V0.1.0</p>
                 <p id='version'>Powered by OpenAI</p>
             </div>   
         </div> 
@@ -149,7 +149,7 @@
                 url: 'https://api.pawan.krd/v1/completions',
                 method: 'POST',
                 headers: {
-                    'Authorization': '',
+                    'Authorization': 'Bearer,
                     'Content-Type': 'application/json',
                 },
                 data: JSON.stringify({
