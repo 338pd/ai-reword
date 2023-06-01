@@ -102,6 +102,12 @@ p {
   border-radius: 10px;
 }
 
+.submit-button:hover {
+  border-color: slategray;
+  background-color: slategray;
+  color: var(--black);
+}
+
 #version {
   display: flex;
   flex-direction: column;
