@@ -69,7 +69,9 @@ p {
   border: 1px solid slategrey;
   border-radius: 10px;
   font-size: 16px;
-  background-color: var(--black)
+  background-color: var(--black);
+  color: slategray;
+  resize: none;
 }
 
 
