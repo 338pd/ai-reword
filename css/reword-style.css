@@ -21,7 +21,7 @@ header {
   font-family: Arial;
   color: slategrey;
   border-bottom: 1px solid slategrey;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -63,9 +63,8 @@ p {
 
 .text-container {
   margin: .5rem;
-  padding: 10px;
-  width: 35rem;
-  height: 15rem;
+  width: 40rem;
+  height: 20rem;
   border: 1px solid slategrey;
   border-radius: 10px;
   font-size: 16px;
@@ -124,13 +123,14 @@ p {
   color: var(--black);
 }
 
-
-
-#version {
+.version-container {
   display: flex;
   flex-direction: column;
   align-items: bottom;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
+  margin-top: 2rem;
+}
+
+#version {
+  text-align: center;
 }
