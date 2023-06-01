@@ -59,8 +59,19 @@ p {
   margin-bottom: 1rem;
   border: 1px solid slategrey;
   border-radius: 10px;
-  border-color: slategrey;
 }
+
+.text-container {
+  margin: .5rem;
+  padding: 10px;
+  width: 35rem;
+  height: 15rem;
+  border: 1px solid slategrey;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: var(--black)
+}
+
 
 .reader-button {
   font-size: 1rem;
@@ -79,6 +90,18 @@ p {
   color: var(--black);
 }
 
+.submit-button {
+  font-size: 1rem;
+  padding: .5rem;
+  margin:1rem;
+  cursor: pointer;
+  background-color: black;
+  color: slategrey;
+  user-select: none;
+  border: 1px solid slategrey;
+  border-radius: 10px;
+}
+
 #version {
   display: flex;
   flex-direction: column;
@@ -86,12 +109,4 @@ p {
   justify-content: center;
   position: fixed;
   bottom: 0;
-}
-
-#myInput {
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
 }
