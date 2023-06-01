@@ -15,6 +15,8 @@
     
     <link rel="stylesheet" href="css/reword-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -65,8 +67,104 @@
     </div>
     
     <script>
+
+        let reader = '';
+        let formality = '';
+        let type = '';
+        let sizing = '';
         
+        const readerButtons = document.querySelectorAll('#reader-button-container .reader-button');
+        readerButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateReader(button.textContent);
+            });
+        });
+
+        const formalityButtons = document.querySelectorAll('#formality-button-container .reader-button');
+        formalityButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateFormality(button.textContent);
+            });
+        });
+
+        const typeButtons = document.querySelectorAll('#type-button-container .reader-button');
+        typeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateType(button.textContent);
+            });
+        });
+
+        const sizingButtons = document.querySelectorAll('#sizing-button-container .reader-button');
+        sizingButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateSizing(button.textContent);
+            });
+        });
+
+        function updateReader(buttonText) {
+            reader = buttonText;
+            updateButtonHighlight('reader-button-container', buttonText);
+        }
+
+        function updateFormality(buttonText) {
+            formality = buttonText;
+            updateButtonHighlight('formality-button-container', buttonText);
+        }
+
+        function updateType(buttonText) {
+            type = buttonText;
+            updateButtonHighlight('type-button-container', buttonText);
+        }
+
+        function updateSizing(buttonText) {
+            sizing = buttonText;
+            updateButtonHighlight('sizing-button-container', buttonText);
+        }
+
+        function updateButtonHighlight(containerId, buttonText) {
+            const container = document.getElementById(containerId);
+            const buttons = container.getElementsByClassName('reader-button');
+
+            for (let i = 0; i < buttons.length; i++) {
+                const button = buttons[i];
+                if (button.textContent === buttonText) {
+                    button.classList.add('highlight');
+                } else {
+                    button.classList.remove('highlight');
+                }
+            }
+        }
+
+        const submit = document.querySelector('#submit-button');
+        submit.addEventListener('click', () => {
+            const inputText = document.getElementById('input').value;
+            const outputTextarea = document.getElementById('output');
+            
+            const prompt = 
+            `Reword the following text for a ${reader} reader, with a ${formality} tone in an ${type} style. The length of the text should be ${sizing}. Only respond with the reworded text: ${inputText}`
+
+            // Make the API request to OpenAI
+            $.ajax({
+                url: 'https://api.pawan.krd/v1/completions',
+                method: 'POST',
+                headers: {
+                    'Authorization': '',
+                    'Content-Type': 'application/json',
+                },
+                data: JSON.stringify({
+                    model: "gpt-3.5-turbo", 
+                    prompt: prompt,
+                    max_tokens: 1000,
+                }),
+                success: function(response) {
+                    const outputText = response.choices[0].text.trim();
+                    outputTextarea.value = outputText;
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        });
     </script>
 </body>
-
 </html>

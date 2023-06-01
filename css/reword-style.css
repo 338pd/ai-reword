@@ -92,6 +92,20 @@ p {
   color: var(--black);
 }
 
+.highlight {
+  font-size: 1rem;
+  padding: .5rem;
+  cursor: pointer;
+  background-color: black;
+  color: slategrey;
+  user-select: none;
+  border: 3px solid black;
+  border-radius: 10px;
+  border-color: slategray;
+  background-color: slategray;
+  color: var(--black);
+}
+
 .submit-button {
   font-size: 1rem;
   padding: .5rem;
@@ -109,6 +123,8 @@ p {
   background-color: slategray;
   color: var(--black);
 }
+
+
 
 #version {
   display: flex;
